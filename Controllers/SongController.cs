@@ -33,7 +33,7 @@ namespace MusicCollectionApi.Controllers
                       return NotFound();
                   }
                   
-                return await _context.Song.ToListAsync();
+                return await _context.Song.Include(e => e.Album).ToListAsync();
                 }
 
         // GET: api/Song/5
